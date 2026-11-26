@@ -1,21 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Public_Sans } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
-
-const archivo = Archivo({
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  variable: "--font-archivo",
-  display: "swap",
-});
-
-const publicSans = Public_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-public",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: {
@@ -37,12 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${archivo.variable} ${publicSans.variable}`}
-      suppressHydrationWarning
-    >
-      <body className="font-sans">
+    <html lang="en" className="font-sans" suppressHydrationWarning>
+      <body className="bg-paper text-ink font-sans antialiased">
         <Link href="#main" className="skip-link">
           Skip to main content
         </Link>

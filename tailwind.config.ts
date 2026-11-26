@@ -29,8 +29,20 @@ const config: Config = {
         rule: "#D7DCE3",
       },
       fontFamily: {
-        display: ["var(--font-archivo)", "system-ui", "sans-serif"],
-        sans: ["var(--font-public)", "system-ui", "sans-serif"],
+        display: [
+          "Segoe UI",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "sans-serif",
+        ],
+        sans: [
+          "Segoe UI",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "sans-serif",
+        ],
       },
       fontSize: {
         micro: ["0.6875rem", { lineHeight: "1rem", letterSpacing: "0.04em" }],
