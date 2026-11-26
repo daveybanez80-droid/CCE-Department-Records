@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  /* Focus is visible and consistent everywhere, never removed. */
+  :focus-visible {
+    outline: 2px solid #143a66;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: #fbeeee;
+    color: #0d1b2e;
+  }
+
+  /* Tabular figures for anything numeric in tables and stat blocks. */
+  .nums {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+}
+
+@layer components {
+  /* The institutional rule: a two-tone rule that carries the school's
+     navy and the department's crimson. Used as a structural divider. */
+  .rule-institutional {
+    height: 3px;
+    border: 0;
+    background: linear-gradient(
+      90deg,
+      #143a66 0%,
+      #143a66 62%,
+      #9c1b24 62%,
+      #9c1b24 100%
+    );
+  }
+
+  .rule-hair {
+    height: 1px;
+    border: 0;
+    background: #d7dce3;
+  }
+
+  .shell {
+    @apply mx-auto w-full max-w-shell px-5 sm:px-7 lg:px-10;
+  }
+
+  /* Keyboard-only skip link. */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    background: #0d1b2e;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 3px;
+  }
+  .skip-link:focus {
+    left: 12px;
+    top: 12px;
+  }
+
+  .field {
+    @apply w-full rounded border border-rule bg-white px-3 py-2 text-base text-ink placeholder:text-ink/40;
+  }
+  .field:focus {
+    @apply border-navy outline-none ring-2 ring-navy/25;
+  }
+
+  .label-eyebrow {
+    @apply block text-micro font-semibold uppercase tracking-[0.12em] text-ink/55;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded px-4 py-2 text-small font-semibold transition-colors;
+  }
+  .btn-primary {
+    @apply btn bg-navy text-white hover:bg-navy-deep;
+  }
+  .btn-crimson {
+    @apply btn bg-crimson text-white hover:bg-crimson-deep;
+  }
+  .btn-quiet {
+    @apply btn border border-rule bg-white text-ink hover:bg-paper;
+  }
+  .btn-ghost {
+    @apply btn text-navy hover:bg-navy-soft;
+  }
+
+  .tag {
+    @apply inline-flex items-center gap-1 rounded-sm px-2 py-[3px] text-micro font-semibold;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
