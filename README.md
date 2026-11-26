@@ -128,3 +128,9 @@ pnpm db:generate  # Generate TypeScript types from DB
 ## License
 
 MIT License - feel free to use for your department!
+```
+
+<system-reminder>
+<total_tokens>14998360 tokens left</total_tokens>
+</system-reminder>
+</tool_call>
